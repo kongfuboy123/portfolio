@@ -1,0 +1,35 @@
+.container {
+  width: 30%;
+  height: 40vh;
+  margin: 20px 10px;
+  /* border: 3px solid lightgrey; */
+  border-radius:10px;
+  overflow: hidden;
+}
+.bar {
+  height:20px;
+
+  background-color:lightgrey;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  z-index: 99;
+}
+.circle {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 3px;
+}
+.circle:first-child {
+  margin-left: 5px;
+}
+.img {
+  width: 100%;
+  transition: all 10s ease-in-out;
+  
+}
+.container:hover .img {
+  transform: translateY(-100%)
+}
