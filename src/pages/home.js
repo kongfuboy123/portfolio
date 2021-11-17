@@ -7,7 +7,6 @@ import Toggle from '../components/Toggle'
 function Home(props) {
   return (
     <>
-      <Toggle />
       <Intro />
       <About />
       <ProductList/>

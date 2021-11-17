@@ -5,7 +5,7 @@ function About(props) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div className={styles.card,styles.bg}></div>
+        <div className={`${styles.card} ${styles.bg}`}></div>
         <div className={styles.card}>
           <img 
             src="https://images.pexels.com/photos/3585047/pexels-photo-3585047.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" 
