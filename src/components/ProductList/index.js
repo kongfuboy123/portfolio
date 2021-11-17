@@ -4,7 +4,7 @@ import {products} from '../../data'
 import styles from './ProductList.module.css'
 
 function ProductList(props) {
-  console.log('url')
+  
   return (
     <div className={styles.container}>
       <div className={styles.text}>

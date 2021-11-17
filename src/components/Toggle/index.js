@@ -5,9 +5,8 @@ import Moon from '../../img/moon.png';
 import {MyContext} from '../../context-manager'
 function Toggle() {
   
-  
   const theme = useContext(MyContext)
-  console.log(theme)
+ 
   return (
     <div className={styles.container}> 
       <img src={Sun} alt="" className={styles.icon} name='light' onClick={()=>theme.dispatch({type:'light'})} />
