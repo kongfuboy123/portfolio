@@ -1,0 +1,32 @@
+.container {
+  height: 50px;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.title {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+  
+}
+.logBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:white;
+  font-size: 16px;
+  font-weight: 400;
+  
+}
+.item {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
