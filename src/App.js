@@ -3,15 +3,15 @@ import About from './components/About'
 import ProductList from './components/ProductList'
 import Contact from './components/Contact'
 import Toggle from './components/Toggle'
-import {useState} from 'react'
+import {useContext} from 'react'
+import {MyContext} from './context-manager'
+
 function App() {
-  const initMode = {type:'light',style:{background:'white',color:'black'}}
-  
-  const [mode,setMode] = useState(initMode);
-  console.log('mode',mode)
+  const theme = useContext(MyContext)
+  console.log('theme',theme)
   return (
-    <div className="App" style={mode.style}>
-      <Toggle type={mode.type} setMode={setMode}/>
+    <div className="App" style={theme.state.style}>
+      <Toggle />
       <Intro />
       <About />
       <ProductList/>
