@@ -7,23 +7,26 @@ import {MyContext} from './context-manager'
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  Navigate,
 } from "react-router-dom";
 
 function App() {
   const theme = useContext(MyContext)
-
+  const user = false
   return (
-    <Layout>
-      <div className="App" style={theme.state.style}>
-        <BrowserRouter>
+    <BrowserRouter>
+      <Layout user={user}>
+        <div className="App" style={theme.state.style}>
+      
           <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="login" element={<Login/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="login" element={user?<Navigate to='/' />:<Login/>} />
           </Routes>
-        </BrowserRouter>
-      </div>
-    </Layout>
+      
+        </div>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

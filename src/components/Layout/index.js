@@ -2,10 +2,11 @@ import React from 'react';
 import Navbar from '../Navbar';
 import Toggle from '../Toggle';
 
-function Layout({children}) {
+function Layout({children,user}) {
+  
   return (
     <div>
-      <Navbar />
+      <Navbar user={user} />
       <Toggle />
       {children}
     </div>
