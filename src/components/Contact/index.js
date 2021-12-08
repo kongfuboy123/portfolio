@@ -20,57 +20,55 @@ function Contact(props) {
       });
   };
   return (
-    <div className={styles.container}>
-      <div className={styles.bg}></div>
-      <div  className={styles.wrapper}>
-        <div className={styles.left}>
-          <h1 className={styles.title}>
-            Let's discuss your project
-          </h1>
-          <div className={styles.info}>
-            <div className={styles.infoItem}>
-              <img 
-                src={Phone}
-                alt="" 
-                className={styles.icon}
-              />
-              +61 404105233
-            </div>
-            <div className={styles.infoItem}>
-              <img 
-                src={Email}
-                alt="" 
-                className={styles.icon}
-              />
-              info@ameservice.com
-            </div>
-            <div className={styles.infoItem}>
-              <img 
-                src={Address}
-                alt="" 
-                className={styles.icon}
-              />
-              Sydney
-            </div>
+    <div id='contact' className={styles.container}>
+      <div className={styles.left}>
+        <h1 className={styles.title}>
+        Feel Free to <span>Contact Me </span>
+        </h1>
+        <div className={styles.info}>
+          <div className={styles.infoItem}>
+            <img 
+              src={Phone}
+              alt="" 
+              className={styles.icon}
+            />
+            +61 404105233
+          </div>
+          <div className={styles.infoItem}>
+            <img 
+              src={Email}
+              alt="" 
+              className={styles.icon}
+            />
+            yunpeng.wang525@gmail.com
+          </div>
+          <div className={styles.infoItem}>
+            <img 
+              src={Address}
+              alt="" 
+              className={styles.icon}
+            />
+            Sydney
           </div>
         </div>
-        <div className={styles.right}>
-          <p className={styles.desc}>
-            <b>What’s your story?</b> Get in touch. Always available for
-            freelancing if the right project comes along. me.
-          </p>
-          <form className={styles.form} ref={formRef} onSubmit={sendEmail}>
-            <input type="text" placeholder="Name" name="user_name" className={styles.input}/>
-            <input type="text" placeholder="Subject" name="subject" className={styles.input}/>
-            <input type="text" placeholder="Email" name="user_email" className={styles.input}/>
-            <textarea name="message"   rows="5" className={styles.textarea} placeholder="Message"/>
-            <button type="submit" name="btn" className={styles.btn}>Submit</button>
+      </div>
 
-          </form>
-          {done&&'Thank you for your consulting,we will reply you ASAP.' }
-        </div>
+      <div className={styles.right}>
+        <p className={styles.desc}>
+          <b>What’s your story?</b> Get in touch. .
+        </p>
+        <form className={styles.form} ref={formRef} onSubmit={sendEmail}>
+          <input type="text" placeholder="Name" name="user_name" className={styles.input}/>
+          <input type="text" placeholder="Subject" name="subject" className={styles.input}/>
+          <input type="text" placeholder="Email" name="user_email" className={styles.input}/>
+          <textarea name="message"   rows="5" className={styles.textarea} placeholder="Message"/>
+          <button type="submit" name="btn" className={styles.btn}>Submit</button>
+
+        </form>
+        {done&&'Thank you for your consulting,  I will reply you ASAP.' }
       </div>
     </div>
+    
   );
 }
 

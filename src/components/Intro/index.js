@@ -4,7 +4,7 @@ import React from 'react';
 import Me from '../../img/me.png';
 function Intro(props) {
   return (
-    <div className={styles.container}>
+    <div id="intro" className={styles.container}>
        <div className={styles.left}>
         <div className={styles.meBg}></div>
         <img src={Me} alt="" className={styles.me}/>

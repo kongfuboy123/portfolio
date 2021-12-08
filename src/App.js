@@ -1,6 +1,5 @@
 
 import Home from './pages/home'
-import Login from './pages/login/login.js'
 import Layout from './components/Layout'
 import {useContext} from 'react'
 import {MyContext} from './context-manager'
@@ -13,15 +12,15 @@ import {
 
 function App() {
   const theme = useContext(MyContext)
-  const user = false
+
   return (
     <BrowserRouter>
-      <Layout user={user}>
+      <Layout>
         <div className="App" style={theme.state.style}>
       
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="login" element={user?<Navigate to='/' />:<Login/>} />
+ 
           </Routes>
       
         </div>

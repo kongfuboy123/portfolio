@@ -91,3 +91,8 @@ s, i, em {
 .col-red {
     color: #C81623 !important;
 }
+
+span {
+    font-weight: bold;
+    color: orange;
+}

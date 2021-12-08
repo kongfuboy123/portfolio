@@ -33,3 +33,11 @@
 .container:hover .img {
   transform: translateY(-100%)
 }
+
+
+@media screen and (max-width: 960px){
+  .container {
+    width: 70vh;
+  }
+}
+  

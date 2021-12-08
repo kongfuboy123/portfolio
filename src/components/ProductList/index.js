@@ -6,13 +6,11 @@ import styles from './ProductList.module.css'
 function ProductList(props) {
   
   return (
-    <div className={styles.container}>
+    <div id='project' className={styles.container}>
       <div className={styles.text}>
-        <h1 className={styles.title}>Create & inspire</h1>
+        <h1 className={styles.title}>My <span> Projects </span></h1>
         <p className={styles.desc}>
-        Lama is a creative portfolio that your work has been waiting for.
-        Beautiful homes, stunning portfolio styles & a whole lot more awaits
-        inside.
+        Here are some projects I've worked on recently.
         </p>
       </div>
       <div className={styles.list}>

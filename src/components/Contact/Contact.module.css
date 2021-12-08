@@ -1,26 +1,21 @@
 .container {
   height: 100vh;
   position: relative;
+  display: flex;
 }
-.bg {
-  width: 20px ;
-  height: 100%;
-  background-color: orange;
-  position:absolute;
-}
-.wrapper {
-  
-  padding:50px;
-  display:flex;
 
-}
-.left {
+
+.left ,.right{
+  padding: 0 50px;
   flex: 1;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items : center; */
+  justify-content :center;
   
 }
 .title {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: bold;
   width: 80%;
 }
@@ -40,15 +35,6 @@
   width: 30px;
   height: 30px;
   margin-right: 5px;
-}
-.right {
-  flex: 1;
- 
-  display: flex;
-  flex-direction: column;
-  align-items : center;
-  justify-content :center;
-  
 }
 .desc {
   width: 80%;
@@ -83,4 +69,17 @@
   color: white;
   font-weight: 500;
   cursor: pointer;
+}
+
+@media screen and (max-width: 960px){
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .left, .right {
+    display: flex;
+    align-items: center;
+    justify-content:center
+  }
+  
 }

@@ -1,5 +1,7 @@
-import React, { useReducer } from "react";
+import React, { useReducer,useState } from "react";
 import {MyContext} from './context-manager'
+
+
 // 设置lightMode，darkMode
 const lightMode = {type:'light',style:{background:'white',color:'black'}}
 const darkMode = {type:'dark',style:{background:'black',color:'white'}}
@@ -21,6 +23,7 @@ const reducer = (state,action) => {
 function Theme({children}) {
   //使用useReducer，state 初始值为lightMode，并把[state,dispatch]传给所有被包括的组件
   const [state,dispatch] = useReducer(reducer,lightMode)
+  // const [layoutWidth,setWidth] = useState('100vw')
   return (
     <MyContext.Provider value={{state,dispatch}}>
       {children}

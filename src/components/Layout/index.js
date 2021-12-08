@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from '../Navbar';
-import Toggle from '../Toggle';
+import styles from './Layout.module.css'
 
-function Layout({children,user}) {
+function Layout({children}) {
+
   
   return (
-    <div>
-      <Navbar user={user} />
-      <Toggle />
+    <div className={styles.container} >
+      <Navbar />
       {children}
     </div>
   );
