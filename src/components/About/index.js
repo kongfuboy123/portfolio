@@ -20,7 +20,7 @@ function About(props) {
       <div className={styles.right}>
         <h1 className={styles.title}>About <span>Me</span></h1>
         <p className={styles.desc}>
-        I am a big fan of Dragon Ball and like front-end programming and the latest front-end technology. I can proficiently use front-end frameworks such as react and next.js, and back-end frameworks such as express and koa.
+           I am a big fan of Dragon Ball and like front-end programming and the latest front-end technology. I can proficiently use front-end frameworks such as react and next.js, and back-end frameworks such as express and koa.
         </p>
         
      
