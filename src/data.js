@@ -27,7 +27,7 @@ export const products = [
   {
     id: 6,
     img: "/img/06.png",
-    link: "http://",
+    link: "https://dev-myshop0406.pantheonsite.io/",
   },
 
 ];
