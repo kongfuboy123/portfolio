@@ -1,115 +1,85 @@
-# 使用useReducer+useContext ，实现darkMode功能
+# Getting Started with Create React App
 
-## 1 创建context-manager.js 文件
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-```javascript
-import React from 'react';
+## Available Scripts
 
-export const MyContext = React.createContext(null);
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Getting Started with github
+## 1 Create a local folder as your project 
+## 2 pull repository from github
 ```
-
-## 2 创建Theme.js 文件 
-
+git init
+git branch -M main
+git remote add origin https://github.com/kongfuboy123/xxxx.git
+git pull origin main
 ```
-import React, { useReducer } from "react";
-import {MyContext} from './context-manager'
-// 设置lightMode，darkMode
-const lightMode = {type:'light',style:{background:'white',color:'black'}}
-const darkMode = {type:'dark',style:{background:'black',color:'white'}}
-
-const reducer = (state,action) => {
-  switch (action.type) {
-    case 'light':
-      return lightMode;
-    case 'dark':
-      return darkMode;
-    default:
-      return state;
-  }
-}
-
-function Theme({children}) {
-  //使用useReducer，state 初始值为lightMode，并把{state,dispatch}zu传给所有被包括的组件
-  const [state,dispatch] = useReducer(reducer,lightMode)
-  return (
-    <MyContext.Provider value={{state,dispatch}}>
-      {children}
-    </MyContext.Provider>
-  );
-}
-
-export default Theme;
+## 3 push changes to your repository
 ```
-
-## 3 在index.js 文件中，使用Theme 包裹 App
-
+git add .
+git commit -m 'some message'
+git push -u origin main
 ```
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Theme from './Theme'
-import './index.css';
-import App from './App';
-
-ReactDOM.render(
-  <Theme >
-    <App />
-  </Theme>,
-  document.getElementById('root')
-);
-```
-
-## 4 在App.js 中使用传入的theme.state ，用来设置darkMode或lightMode
-
-
-
-```
-import Intro from './components/Intro'
-import About from './components/About'
-import ProductList from './components/ProductList'
-import Contact from './components/Contact'
-import Toggle from './components/Toggle'
-import {useContext} from 'react'
-import {MyContext} from './context-manager'
-
-function App() {
-  //读取传入的theme的初始值，并把style赋值给App，通过style来设置背景色与字体色
-  const theme = useContext(MyContext)
-  console.log('theme',theme)
-  return (
-    <div className="App" style={theme.state.style}>
-      <Toggle />
-      <Intro />
-      <About />
-      <ProductList/>
-      <Contact/>
-    </div>
-  );
-}
-
-export default App;
-```
-
-## 4 在Toggle.js 中使用传入的theme.dispatch，用来实现mode的切换
-
-```
-import React,{useContext} from 'react';
-import styles from './Toggle.module.css'
-import Sun from '../../img/sun.png';
-import Moon from '../../img/moon.png';
-import {MyContext} from '../../context-manager'
-
-function Toggle() {
-  const theme = useContext(MyContext)
-  
-  return (
-    <div className={styles.container}> 
-      <img src={Sun} alt="" className={styles.icon} name='light' onClick={()=>theme.dispatch({type:'light'})} />
-      <img src={Moon} alt="" className={styles.icon} name='dark' onClick={()=>theme.dispatch({type:'dark'})} />
-      <div className={styles.btn} style={theme.state.type==='light'?{left:0}:{left:'25px'}} ></div>
-    </div>
-  );
-}
-
-export default Toggle;
-```
-# 使用passport.js ，实现login功能

@@ -12,12 +12,12 @@ export const products = [
   {
     id: 3,
     img: "/img/03.png",
-    link: "https://kongfuboy123.github.io/primary-math/",
+    link: "https://kongfuboy123.github.io/module5-solution/",
   },
   {
     id: 4,
     img: "/img/04.png",
-    link: "https://kongfuboy123.github.io/module5-solution/",
+    link: "https://dev-myshop0406.pantheonsite.io/",
   },
   {
     id: 5,
@@ -27,7 +27,7 @@ export const products = [
   {
     id: 6,
     img: "/img/06.png",
-    link: "https://dev-myshop0406.pantheonsite.io/",
+    link: "https://kongfuboy123.github.io/primary-math/",
   },
 
 ];

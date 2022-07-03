@@ -1,31 +1,16 @@
-
-import Home from './pages/home'
-import Layout from './components/Layout'
-import {useContext} from 'react'
-import {MyContext} from './context-manager'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-
+import {useState} from 'react'
+import Nav from "./components/Nav";
+import {Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
 function App() {
-  const theme = useContext(MyContext)
-
+  const [dark,setDark]=useState(false);
   return (
-    <BrowserRouter>
-      <Layout>
-        <div className="App" style={theme.state.style}>
-      
-          <Routes>
-            <Route path="/" element={<Home/>} />
- 
-          </Routes>
-      
-        </div>
-      </Layout>
-    </BrowserRouter>
+    <div className={dark?"dark":''}>
+      <Nav props={{dark,setDark}}/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+      </Routes>
+    </div>
   );
 }
 
