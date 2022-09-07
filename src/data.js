@@ -17,7 +17,7 @@ export const products = [
   {
     id: 4,
     img: "/img/04.png",
-    link: "https://dev-myshop0406.pantheonsite.io/",
+    link: "https://go-seven-red.vercel.app/",
   },
   {
     id: 5,
